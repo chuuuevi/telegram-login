@@ -1,5 +1,9 @@
 # telegram-login
 
+## note
+
+[**Not support logout.**](https://stackoverflow.com/questions/48931279/how-to-log-out-change-account-of-telegram-after-logging-in-with-the-login-widg)
+
 ## npm install
 
 ```bash
@@ -16,10 +20,6 @@ npm install --registry=https://registry.npmmirror.com
 6. enter your bot name
 7. enter your domain name or ip with port
 8. Widget configuration: https://core.telegram.org/widgets/login#widget-configuration
-
-## note
-
-**Not support logout.**
 
 # ref
 
