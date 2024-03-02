@@ -7,6 +7,7 @@ import sign from './telegram-singer.js'
 const proxy = process.env.HTTP_PROXY;
 const httpAgent = proxy ? new HttpsProxyAgent(proxy) : null;
 
+const TELEGRAM_BOT_ID = process.env.TELEGRAM_BOT_ID
 const TELEGRAM_BOT_NAME = process.env.TELEGRAM_BOT_NAME
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
 const CALLBACK_URL = process.env.CALLBACK_URL
@@ -51,11 +52,13 @@ app.get('/telegram-callback', async (req, res) => {
     // Extract state and code from query string
     const signature = sign(TELEGRAM_BOT_TOKEN, req.query);
     console.info(`req.query=${JSON.stringify(req.query)}, signature=${signature}`);
+    if (req.query.hash === signature) {
+        console.info(`verify pass`)
+    }
     const {auth_date, first_name, id, username} = req.query;
     req.session.telegram = {
         auth_date, first_name, id, username
     }
-
     res.redirect('/');
 })
 

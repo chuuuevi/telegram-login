@@ -17,6 +17,10 @@ npm install --registry=https://registry.npmmirror.com
 7. enter your domain name or ip with port
 8. Widget configuration: https://core.telegram.org/widgets/login#widget-configuration
 
+## note
+
+**Not support logout.**
+
 # ref
 
 1. [Telegram（电报）授权登录（web）第三方 ](https://juejin.cn/post/7072557507595485221)
